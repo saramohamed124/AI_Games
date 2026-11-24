@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <meta name="color-scheme" content="light" />
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <title>Ai Game</title>
+  </head>
+  <body>
+    <main id="m">
+      <h1>🤖 ملعب الذكاء الاصطناعي</h1>
+      <p>٣ ألعاب، وفي كل واحدة الـ AI هو اللي بيفكر، وإنت بتشوف إزاي.</p>
+      <div id="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-t="0">
+          ❌⭕ الـ AI مش بيغلب
+        </button>
+        <button role="tab" aria-selected="false" data-t="1">
+          ✊ الـ AI بيتعلم
+        </button>
+        <button role="tab" aria-selected="false" data-t="2">
+          🧭 الـ AI بيلاقي الطريق
+        </button>
+      </div>
+
+      <section class="card" id="s0">
+        <div class="idea">
+          <b>الفكرة:</b> الـ AI بيجرّب كل الاحتمالات المستقبلية للعبة (خوارزمية
+          Minimax) ويختار أحسن حركة. جرّب تغلبه!
+        </div>
+        <div id="bd"></div>
+        <p class="msg" id="m0"></p>
+        <div class="sc">
+          <div><b id="sw">0</b>فوزك</div>
+          <div><b id="sd">0</b>تعادل</div>
+          <div><b id="sa">0</b>فوز الـ AI</div>
+        </div>
+        <label class="opts"
+          ><input type="checkbox" id="ab" checked /> تقليم Alpha-Beta (يوفر
+          الفحص)</label
+        >
+        <p class="msg" id="nd" style="font-weight: 400; color: var(--mut)"></p>
+        <div class="row">
+          <button class="b o" id="nw">لعبة جديدة</button
+          ><button class="b" id="ai1">خلي الـ AI يبدأ</button>
+        </div>
+      </section>
+
+      <section class="card" id="s1" hidden>
+        <div class="idea">
+          <b>الفكرة:</b> الـ AI مفيش عنده قواعد جاهزة. بيسجل اللي بتلعبه بعد كل
+          حركة، وبيتعلم نمطك ويتوقع حركتك الجاية. العب بعشوائية حقيقية لو قدرت!
+        </div>
+        <div class="mv">
+          <button data-m="0" aria-label="حجر">✊</button
+          ><button data-m="1" aria-label="ورقة">✋</button
+          ><button data-m="2" aria-label="مقص">✌️</button>
+        </div>
+        <p class="msg" id="m1">اختار حركة</p>
+        <div id="pb"></div>
+        <div class="sc">
+          <div><b id="rp">0</b>فوزك</div>
+          <div><b id="rd">0</b>تعادل</div>
+          <div><b id="ra">0</b>فوز الـ AI</div>
+        </div>
+        <p class="msg" id="wr" style="font-weight: 400; color: var(--mut)"></p>
+        <div class="row">
+          <button class="b o" id="rr">امسح ذاكرة الـ AI</button>
+        </div>
+      </section>
+
+      <section class="card" id="s2" hidden>
+        <div class="idea">
+          <b>الفكرة:</b> ارسم حواجز بإصبعك، وبعدين خلّي BFS ينتشر في كل اتجاه،
+          وA* يستخدم heuristic عشان يروح ناحية الهدف. قارن عدد المربعات اللي
+          فحصها كل واحد.
+        </div>
+        <canvas id="cv"></canvas>
+        <div class="lg">
+          <span><i style="background: #219ebc"></i>البداية</span
+          ><span><i style="background: #ffb703"></i>الهدف</span
+          ><span><i style="background: #8ecae6"></i>اتفحص</span
+          ><span><i style="background: #fb8500"></i>الطريق</span>
+        </div>
+        <div class="row">
+          <button class="b" id="gb">BFS</button
+          ><button class="b o" id="ga">A*</button
+          ><button class="b s" id="gm">متاهة عشوائية</button
+          ><button class="b" id="gc">مسح</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>الخوارزمية</th>
+              <th>اتفحص</th>
+              <th>طول الطريق</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BFS</td>
+              <td id="b1">-</td>
+              <td id="b2">-</td>
+            </tr>
+            <tr>
+              <td>A*</td>
+              <td id="a1">-</td>
+              <td id="a2">-</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="msg" id="m2" style="font-weight: 400; color: var(--mut)"></p>
+      </section>
+    </main>
+    <script src="./js/script.js">
+
+    </script>
+  </body>
+</html>
